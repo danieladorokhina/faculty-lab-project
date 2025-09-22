@@ -1,0 +1,14 @@
+{% extends 'faculty/base.html' %}
+
+{% block content %}
+    {% if content %}
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.description|linebreaks }}</p>
+        <hr>
+        <h3>Контакти</h3>
+        <p>{{ content.contacts|linebreaks }}</p>
+    {% else %}
+        <h1>Головна сторінка</h1>
+        <p>Контент для цієї сторінки ще не додано. Будь ласка, заповніть його через адмін-панель.</p>
+    {% endif %}
+{% endblock %}

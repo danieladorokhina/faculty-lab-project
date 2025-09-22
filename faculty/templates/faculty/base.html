@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ФОЗСРП{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; background-color: #f8f9fa; }
+        .header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .header a { color: white; text-decoration: none; font-size: 24px; font-weight: bold; }
+        .nav { background-color: #0056b3; padding: 10px; text-align: center; }
+        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; }
+        .card { border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 15px; }
+        .card a { text-decoration: none; color: #0056b3; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'home' %}">Факультет Охорони Здоров'я, Соціальної Роботи і Психології</a>
+    </header>
+    <nav class="nav">
+        <a href="{% url 'home' %}">Головна</a>
+        <a href="{% url 'program-list' %}">Програми</a>
+        <a href="{% url 'department-list' %}">Кафедри</a>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

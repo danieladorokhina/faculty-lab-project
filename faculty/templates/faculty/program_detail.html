@@ -1,0 +1,46 @@
+{% extends 'faculty/base.html' %}
+
+{% block content %}
+    <h1>{{ program.name }}</h1>
+    <p><strong>Випускова кафедра:</strong> {{ program.department.name }}</p>
+    <hr>
+    <h2>Опис</h2>
+    <p>{{ program.description|linebreaks }}</p> <hr>
+    <h2>Дисципліни</h2>
+    <ul>
+    {% for discipline in disciplines_list %}
+    <li>{{ discipline }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Дисципліни за роками</h3>
+
+<h4>1-й рік</h4>
+<ul>
+    {% for discipline in program.disciplines_year1.splitlines %}
+        <li>{{ discipline }}</li>
+    {% endfor %}
+</ul>
+
+<h4>2-й рік</h4>
+<ul>
+    {% for discipline in program.disciplines_year2.splitlines %}
+        <li>{{ discipline }}</li>
+    {% endfor %}
+</ul>
+
+<h4>3-й рік</h4>
+<ul>
+    {% for discipline in program.disciplines_year3.splitlines %}
+        <li>{{ discipline }}</li>
+    {% endfor %}
+</ul>
+
+<h4>4-й рік</h4>
+<ul>
+    {% for discipline in program.disciplines_year4.splitlines %}
+        <li>{{ discipline }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}  ```
